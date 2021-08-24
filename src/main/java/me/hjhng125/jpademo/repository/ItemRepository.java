@@ -15,7 +15,11 @@ public class ItemRepository {
     private EntityManager entityManager;
 
     public void save(Item item) {
-        entityManager.persist(item);
+        if (item.getId() == null) {
+            entityManager.persist(item);
+        } else {
+            entityManager.merge(item);
+        }
     }
 
     public List<Item> findAll() {
