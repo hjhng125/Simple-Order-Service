@@ -2,7 +2,7 @@ package me.hjhng125.jpademo.service;
 
 import java.util.List;
 import lombok.RequiredArgsConstructor;
-import me.hjhng125.jpademo.domain.Member;
+import me.hjhng125.jpademo.domain.entity.Member;
 import me.hjhng125.jpademo.repository.MemberRepository;
 import org.springframework.stereotype.Service;
 import org.springframework.transaction.annotation.Transactional;

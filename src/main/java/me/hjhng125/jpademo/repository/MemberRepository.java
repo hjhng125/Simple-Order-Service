@@ -3,7 +3,7 @@ package me.hjhng125.jpademo.repository;
 import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.PersistenceContext;
-import me.hjhng125.jpademo.domain.Member;
+import me.hjhng125.jpademo.domain.entity.Member;
 import org.springframework.stereotype.Repository;
 import org.springframework.transaction.annotation.Transactional;
 

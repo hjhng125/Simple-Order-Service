@@ -3,7 +3,7 @@ package me.hjhng125.jpademo.service;
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import me.hjhng125.jpademo.domain.Member;
+import me.hjhng125.jpademo.domain.entity.Member;
 import me.hjhng125.jpademo.repository.MemberRepository;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;

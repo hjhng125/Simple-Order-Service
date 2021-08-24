@@ -1,4 +1,4 @@
-package me.hjhng125.jpademo.domain;
+package me.hjhng125.jpademo.domain.entity;
 
 import static javax.persistence.FetchType.LAZY;
 import static javax.persistence.GenerationType.IDENTITY;

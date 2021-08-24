@@ -1,4 +1,4 @@
-package me.hjhng125.jpademo.domain;
+package me.hjhng125.jpademo.domain.status;
 
 public enum DeliveryStatus {
     READY, COMP,

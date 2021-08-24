@@ -1,7 +1,9 @@
-package me.hjhng125.jpademo.domain;
+package me.hjhng125.jpademo.domain.entity;
 
 import static javax.persistence.GenerationType.IDENTITY;
 import static javax.persistence.InheritanceType.SINGLE_TABLE;
+import static lombok.AccessLevel.PACKAGE;
+import static lombok.AccessLevel.PROTECTED;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -12,13 +14,21 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.Id;
 import javax.persistence.Inheritance;
 import javax.persistence.ManyToMany;
+import lombok.AllArgsConstructor;
+import lombok.Builder;
 import lombok.Getter;
+import lombok.NoArgsConstructor;
+import lombok.ToString;
+import lombok.experimental.SuperBuilder;
 import me.hjhng125.jpademo.exception.NotEnoughStockException;
 
 @Getter
 @Entity
+@SuperBuilder
+@ToString(exclude = "categories")
 @Inheritance(strategy = SINGLE_TABLE)
 @DiscriminatorColumn(name = "DTYPE")
+@NoArgsConstructor(access = PROTECTED)
 public abstract class Item {
 
     @Id
@@ -40,7 +50,7 @@ public abstract class Item {
     }
 
     public void removeStock(int stockQuantity) {
-        if (this.stockQuantity < 0) {
+        if (this.stockQuantity - stockQuantity < 0) {
             throw new NotEnoughStockException("재고가 모자랍니다.");
         }
         this.stockQuantity -= stockQuantity;
